@@ -44,6 +44,12 @@ export default function SignupPage() {
       return;
     }
 
+    if (data.session) {
+      // Email confirmation is OFF — user is already logged in
+      router.push('/listings');
+      return;
+    }
+
     setSent(true);
   }
 
